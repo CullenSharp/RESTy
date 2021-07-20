@@ -8,21 +8,16 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Form from './components/form';
 import Results from './components/results';
+import axios from 'axios';
 
 function App(){
   let [data, setData] = useState();
   const [requestParams, setRequestParams] = useState({});
 
-  const callApi = (requestParams) => {
-    // mock output
-    data = {
-      count: 2,
-      results: [
-        {name: 'fake thing 1', url: 'http://fakethings.com/1'},
-        {name: 'fake thing 2', url: 'http://fakethings.com/2'},
-      ],
-    };
-    setData({...data});
+  const callApi = async (requestParams) => {
+    const response = await axios(requestParams);
+
+    setData({...response});
     setRequestParams(requestParams);
   };
 
