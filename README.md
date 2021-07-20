@@ -2,7 +2,7 @@
 
 ![last commit](https://img.shields.io/github/last-commit/CullenSharp/resty)
 
-A React app for a RESTful API.
+A React app for a RESTful API. I'm alive here: [https://jolly-turing-25c11c.netlify.app/](https://jolly-turing-25c11c.netlify.app/)
 
 ## 🚀 Getting Started
 
