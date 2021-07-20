@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './results.scss';
 
 function Results({ data }) {
   return (
