@@ -2,7 +2,7 @@ import React from 'react';
 import './footer.scss';
 
 function Footer(){
-  return <footer>&copy; 2018</footer>;
+  return <footer data-testid="footer">&copy; Cullen Sharp 2021</footer>;
 }
 
 export default Footer;

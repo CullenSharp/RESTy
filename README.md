@@ -9,6 +9,10 @@ A React app for a RESTful API. I'm alive here: [https://jolly-turing-25c11c.netl
 1. Install dependencies `npm i` or `yarn i`
 2. Start a development server `npm start`
 
+## 📈 Architecture
+
+![UML Diagram](./assets/UML.png)
+
 ## 🔍 Further Reading
 
 [SASS Cheat Sheet](https://devhints.io/sass)
