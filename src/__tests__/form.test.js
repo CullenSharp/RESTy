@@ -38,4 +38,4 @@ test('should fire handleApiCall on click', () => {
   const { apiCall, submit } = setup();
   fireEvent.click(submit);
   expect(apiCall).toHaveBeenCalled();
-})
+});

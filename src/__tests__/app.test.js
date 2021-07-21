@@ -35,7 +35,7 @@ test('should update input on change', () => {
 
 test.skip('should render response data', () => {
   const path = 'https://pokeapi.co/api/v2/pokemon/ditto';
-  const { input, submit, method, url, getButton } = setup();
+  const { input, submit, url, getButton } = setup();
 
   fireEvent.change(input, { target: { value: path}});
   fireEvent.click(getButton);
