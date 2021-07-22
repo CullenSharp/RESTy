@@ -1,12 +1,12 @@
+/* eslint-disable react/jsx-filename-extension */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './app.js';
+import App from './app';
 
-class Main extends React.Component {
-  render() {
-    return <App />;
-  }
+function Main() {
+  return (<App />);
 }
 
 const rootElement = document.getElementById('root');

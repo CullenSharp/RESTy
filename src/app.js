@@ -1,35 +1,55 @@
-import React, { useState } from 'react';
+/* eslint-disable react/jsx-filename-extension */
 
+// import React
+import React, { useState, useEffect } from 'react';
+
+// import style sheets
 import './app.scss';
 
-// Let's talk about using index.js and some other name in the component folder
-// There's pros and cons for each way of doing this ...
+// import axios for http requests
+import axios from 'axios';
+
+// import components
 import Header from './components/header';
 import Footer from './components/footer';
 import Form from './components/form';
 import Results from './components/results';
-import axios from 'axios';
 
-function App(){
-  let [data, setData] = useState();
+function App() {
+  const [data, setData] = useState();
   const [requestParams, setRequestParams] = useState({});
 
-  const callApi = async (requestParams) => {
-    const response = await axios(requestParams);
-
-    setData({...response});
-    setRequestParams(requestParams);
+  const callApi = async (requestParamsObject) => {
+    try {
+      const response = await axios(requestParamsObject);
+      setData(response);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
   };
 
+  useEffect(async () => {
+    if (requestParams !== {}) {
+      callApi(requestParams);
+    }
+  }, [requestParams]);
+
   return (
-    <React.Fragment>
+    <>
       <Header />
-      <div data-testid="method">Request Method: {requestParams.method}</div>
-      <div data-testid="url">URL: {requestParams.url}</div>
-      <Form handleApiCall={callApi} />
+      <div data-testid="method">
+        Request Method:
+        {` ${requestParams.method}`}
+      </div>
+      <div data-testid="url">
+        URL:
+        {` ${requestParams.url}`}
+      </div>
+      <Form setRequestParams={setRequestParams} />
       <Results data={data} />
       <Footer />
-    </React.Fragment>
+    </>
   );
 }
 

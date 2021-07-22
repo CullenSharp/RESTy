@@ -1,10 +1,12 @@
+/* eslint-disable react/jsx-filename-extension */
+
 import React from 'react';
 import './header.scss';
 
-function Header(){
+function Header() {
   return (
     <header>
-      <h1 data-testid='header'>RESTy</h1>
+      <h1 data-testid="header">RESTy</h1>
     </header>
   );
 }
