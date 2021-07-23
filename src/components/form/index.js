@@ -15,11 +15,18 @@ function Form({ setRequestParams }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const formData = {
       method,
       url,
     };
-    setRequestParams(formData);
+
+    const action = {
+      type: 'UPDATE_REQUEST_PARAMS',
+      payload: formData,
+    };
+
+    setRequestParams(action);
   };
 
   function getMethod(e) {
